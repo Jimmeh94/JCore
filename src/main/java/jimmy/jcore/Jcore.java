@@ -19,14 +19,11 @@ import org.spongepowered.api.plugin.Plugin;
 )
 public class Jcore {
 
-    public static Jcore API;
-
     @Inject
     private Logger logger;
 
     @Listener
     public void onServerStarting(GameStartingServerEvent event){
-        API = this;
 
         EventService.init();
     }
