@@ -1,7 +1,7 @@
 package jimmy.jcore.services;
 
 
-import jimmy.jcore.Jcore;
+import jimmy.jcore.services.managers.ManagerService;
 
 import java.util.UUID;
 
@@ -11,7 +11,7 @@ public class User {
 
     public User(UUID uuid) {
         this.uuid = uuid;
-        Jcore.API.getServices().managerService.userManager.add(this);
+        ManagerService.userManager.add(this);
     }
 
     public UUID getUuid() {
@@ -21,6 +21,6 @@ public class User {
     public boolean isPlayer(){return this instanceof UserPlayer;}
 
     public void cleanUp() {
-        Jcore.API.getServices().managerService.userManager.remove(this);
+        ManagerService.userManager.remove(this);
     }
 }

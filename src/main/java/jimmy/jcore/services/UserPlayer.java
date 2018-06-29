@@ -10,9 +10,12 @@ import java.util.UUID;
 public class UserPlayer extends User {
 
     private Scoreboard scoreboard;
+    private PlayerKeys playerKeys;
 
     public UserPlayer(UUID uuid) {
         super(uuid);
+
+        playerKeys = new PlayerKeys();
     }
 
     public void initScoreboard(ScoreboardPreset preset){scoreboard = new Scoreboard(this, preset);}
@@ -30,5 +33,9 @@ public class UserPlayer extends User {
         super.cleanUp();
 
         scoreboard.unregisterScoreboard();
+    }
+
+    public PlayerKeys getPlayerKeys() {
+        return playerKeys;
     }
 }

@@ -16,11 +16,7 @@ public class NodeManager extends Manager<Node> {
     public static void init(String defaultNodeName){
         DEFAULT_NODE = new BlankNode(Text.of("Wilderness"));
     }
-
-    public void load(){
-        MongoService.loadData(MongoService.COLLECTION_NODES);
-    }
-
+    
     public Optional<Node> findNode(Location location){
         Optional<Node> give = Optional.empty();
         for(Node node: objects){
